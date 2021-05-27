@@ -10,12 +10,13 @@ const ingredients = [
 const listRef = document.getElementById('ingredients');
 
 const makeListOfElements = (ingredients) => {
-    return ingredients.forEach(ingredient => {    // при переборе на каждой итерации:
-        const elementRef = document.createElement('li'); // создаем элемент списка;
-        elementRef.textContent = ingredient; // присуждаем значение каждого элемента массива пункту списка;
-        listRef.appendChild(elementRef); // "заливаем" элементы в список
+    return ingredients.forEach(ingredient => {    
+        const elementRef = document.createElement('li'); 
+        elementRef.textContent = ingredient;
+        listRef.append(elementRef)
     });
 };
+
 
 makeListOfElements(ingredients);
 
