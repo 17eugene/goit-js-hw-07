@@ -9,14 +9,16 @@ const ingredients = [
 
 const listRef = document.getElementById('ingredients');
 
-const makeListOfElements = (ingredients) => {
-    return ingredients.forEach(ingredient => {    
-        const elementRef = document.createElement('li'); 
-        elementRef.textContent = ingredient;
-        listRef.append(elementRef)
-    });
-};
+const elemArr = [];
 
+const makeListOfElements = (ingredients) => {
+    return ingredients.map(ingredient => {    
+      const elementRef = document.createElement('li'); 
+      elementRef.textContent = ingredient;
+      elemArr.push(elementRef)
+      listRef.append(...elemArr)
+    });   
+};
 
 makeListOfElements(ingredients);
 
