@@ -7,20 +7,31 @@ const ingredients = [
   'Приправы',
 ];
 
-const listRef = document.getElementById('ingredients');
+const listOfIngredients = document.querySelector('#ingredients');
 
-const elemArr = [];
+const allIngredients = ingredients.map(ingredient => {
+  const ingredientElement = document.createElement('li');
+  ingredientElement.textContent = ingredient;
+  return ingredientElement;
+});
 
-const makeListOfElements = (ingredients) => {
-    return ingredients.map(ingredient => {    
-      const elementRef = document.createElement('li'); 
-      elementRef.textContent = ingredient;
-      elemArr.push(elementRef)
-      listRef.append(...elemArr)
-    });   
-};
+listOfIngredients.append(...allIngredients);
 
-makeListOfElements(ingredients);
+
+// const listRef = document.getElementById('ingredients');
+
+// const elemArr = [];
+
+// const makeListOfElements = (ingredients) => {
+//     return ingredients.map(ingredient => {    
+//       const elementRef = document.createElement('li'); 
+//       elementRef.textContent = ingredient;
+//       elemArr.push(elementRef)
+//       listRef.append(...elemArr)
+//     });   
+// };
+
+// makeListOfElements(ingredients);
 
 
 
